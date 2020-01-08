@@ -1,8 +1,8 @@
 # Selenium with  Quick Reference
 
-### A Quick  Intro ###
+### A Quick  Intro Java ###
 
-#### Skeleton of  ####
+#### Skeleton of Java ####
 
 ```
 // This is a simple  program. 
@@ -144,3 +144,24 @@ outside package      | accessible     | not accessible | accessible | not access
 3. abstract modifier -An abstract class can never be instantiated. If a class is declared as abstract then the sole purpose is for the class to be extended
 4. synchronized      - which are used for threads.
 5. volatile modifiers-which are used for threads.
+
+### Selenium with Java ###
+
+#### Skeleton of Selenium with Java ####
+```java
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestNow {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String baseURL = "http://www.google.com";
+		WebDriver driver;
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(baseURL);
+	}
+}
+```
