@@ -1,10 +1,10 @@
 # Selenium with Java Quick Reference
 
-According to Selenium offical pages `Selenium` Selenium automates browsers. That's it!.
+According to Selenium offical pages `Selenium` automates browsers. That's it!.
 Before go to learn selenium it better have basic programming knowledge.
+
 [Java](#Java) 
 [Selenium](#Selenium) 
-
 
 # Java 
 
