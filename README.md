@@ -1,6 +1,12 @@
-# Selenium with  Quick Reference
+# Selenium with Java Quick Reference
 
-### A Quick  Intro Java ###
+According to Selenium offical pages `Selenium` Selenium automates browsers. That's it!.
+Before go to learn selenium it better have basic programming knowledge.
+[Java](#Java) 
+[Selenium](#Selenium) 
+
+
+# Java 
 
 #### Skeleton of Java ####
 
@@ -145,6 +151,8 @@ outside package      | accessible     | not accessible | accessible | not access
 4. synchronized      - which are used for threads.
 5. volatile modifiers-which are used for threads.
 
+# Selenium 
+
 ### Selenium with Java ###
 
 #### Skeleton of Selenium with Java ####
@@ -165,3 +173,14 @@ public class TestNow {
 	}
 }
 ```
+#### FindElement ####
+
+There many ways we can find object 
+1. ID
+2. Name
+3. Class Name
+4. Tag Name
+5. Link Text
+6. Partial Link Text
+7. XPATH
+8. Css selector
