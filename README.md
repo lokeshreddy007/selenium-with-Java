@@ -3,8 +3,8 @@
 According to Selenium offical pages `Selenium` automates browsers. That's it!.
 Before go to learn selenium it better have basic programming knowledge.
 
-[Java](#Java) 
-[Selenium](#Selenium) 
+1. [Java](#Java)  
+2. [Selenium](#Selenium) 
 
 # Java 
 
@@ -184,3 +184,61 @@ There many ways we can find object
 6. Partial Link Text
 7. XPATH
 8. Css selector
+
+###### Example ######
+
+```java
+// By Id
+driver.findElement(By.id("lst-ib")).sendKeys("Hello");
+
+// By Xpath
+driver.findElement(By.xpath("//*[@id='sblsbb']/button")).click();
+
+// By Name		
+driver.findElement(By.name("btnG")).click();
+
+// By Link Text
+driver.findElement(By.linkText("Login")).click();
+
+// By Partial Link Text
+driver.findElement(By.partialLinkText("Pract")).click();
+
+// By Class Name
+driver.findElement(By.className("title")).click();
+
+```
+#### Css selector ####
+
+`Syntax :	tag[attribute='value'] `
+  
+```java
+
+// By Id input[id=displayed-­‐text]	& by class input[class=displayed-­‐class]	
+ driver.findElement(By.cssSelector("input[id=displayed-­‐text]"));
+// Appendin.class1.class2.class -->  Until we find a unique element
+```
+`Using wildcards` :
+
+“^”	->	Represents	the	starting	text
+“$”	->	Represents the	ending	text
+“*”	->	Represents	the	text	contained
+
+` Syntax: tag[attribute<special	character>=’value’] `
+
+```java
+input[class='inputs']	->	Only	1	matching	node
+input[class^='inputs']	->	Two	matching	nodes
+input[class='displayed-class']	- No	matching	nodes
+input[class$='class']	->	One	matching	node
+input[class*='displayed-class']	->	One	matching	node
+```
+`Finding Children` :
+
+```java
+fieldset	->	10	matching	nodes
+Fieldset>table
+fieldset>#product	->	One	matching	node
+fieldset>button	->	One	matching	node
+Fieldset>a
+fieldset>input#name
+```
