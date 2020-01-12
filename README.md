@@ -209,36 +209,100 @@ driver.findElement(By.className("title")).click();
 ```
 #### Css selector ####
 
-`Syntax :	tag[attribute='value'] `
+`Syntax: tag[attribute='value'] `
   
 ```java
 
-// By Id input[id=displayed-­‐text]	& by class input[class=displayed-­‐class]	
+// By Id input[id=displayed-­‐text]	
+// Byclass input[class=displayed-­‐class]	
  driver.findElement(By.cssSelector("input[id=displayed-­‐text]"));
-// Appendin.class1.class2.class -->  Until we find a unique element
+// we can Append .class1.class2.class -->  Until we find a unique element
 ```
 `Using wildcards` :
 
-“^”	->	Represents	the	starting	text
-“$”	->	Represents the	ending	text
-“*”	->	Represents	the	text	contained
+1. “^”	->	Represents	the	starting	text
+2. “$”	->	Represents the	ending	text
+3. “*”	->	Represents	the	text	contained
 
 ` Syntax: tag[attribute<special	character>=’value’] `
 
 ```java
-input[class='inputs']	->	Only	1	matching	node
-input[class^='inputs']	->	Two	matching	nodes
-input[class='displayed-class']	- No	matching	nodes
-input[class$='class']	->	One	matching	node
-input[class*='displayed-class']	->	One	matching	node
+input[class='inputs']	->	Only 1 matching node
+input[class^='inputs']	->	Two	matching nodes
+input[class='displayed-class']	-> No matching nodes // here class = name-displayed-class
+input[class$='class']	->	One	matching node
+input[class*='displayed-class']	->	One	matching node
 ```
 `Finding Children` :
 
 ```java
-fieldset	->	10	matching	nodes
+fieldset	->	10 matching nodes
 Fieldset>table
-fieldset>#product	->	One	matching	node
-fieldset>button	->	One	matching	node
+fieldset>#product	
+fieldset>button	
 Fieldset>a
 fieldset>input#name
+```
+
+#### Xpath ####
+
+Difference between single ‘/’ or double ‘//’
+1. Single slash ‘/’ anywhere in xpath signifies to look for the element immediately inside the parent element.
+2. Double slash ‘//’ signifies to look for any child or nested-child element inside the parent element.
+
+`Syntax: //tag[@attribute='value']`
+
+```java
+// By Xpath
+driver.findElement(By.xpath("//*[@id='sblsbb']/button")).click();
+// it's always better to tag name instead of using *, shown below
+driver.findElement(By.xpath("//div[@id='sblsbb']/button")).click();
+```
+
+1. Absolute Xpath: It uses Complete path from the Root Element to the desire element. 
+2. Relative Xpath: You can simply start by referencing the element you want and go from there. Always Relative Xpaths are preferred as they are not the complete paths from the Root element
+
+Relative xpath using single ‘/’ 
+```java
+//div[@id='navbar']/div/div/div/ul/li[2]/a
+```
+Relative xpath using double ‘//’
+```java
+//div[@id='navbar']//ul/li[2]/a
+```
+Using Text of the element to build xpath
+Finding Hello link:
+```java
+//div[@class='homepage-hero']//a[text()='Hello']
+```
+Using Contains to find the elements:
+
+` Syntax: //tag[contains(attribute, ‘value’)] `
+
+Finding Login link:
+```java
+//div[@id='navbar']//a[contains(text(),'Login')]
+//div[@id='navbar']//a[contains(@class,'navbar-link') and contains(@href,'sign_in')]
+```
+
+Using Starts-With to find the elements:
+`Syntax: //tag[starts-with(attribute, ‘value’)]`
+Finding Login link:
+```java
+//div[@id='navbar']//a[starts-with(@class,'navbar-link')]
+``
+Parent
+`Syntax: xpath-to-some-element//parent::<tag>`
+
+Preceding Sibling
+`Syntax: xpath-to-some-element//preceding-sibling::<tag>`
+
+Following Sibling
+`Syntax: xpath-to-some-element//following-sibling::<tag>`
+
+Find the price of the course “Python Programming Language”
+```java
+//table[@id='product']//td[text()='Python Programming Language']//following-sibling::td
+Find Author of the book “The Green Mile”
+//div[@id='gridbox']//a[text()='The Green Mile']//parent::td//following-sibling::td[1]
 ```
