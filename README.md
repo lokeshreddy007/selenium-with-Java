@@ -293,13 +293,13 @@ Finding Login link:
 ```java
 //div[@id='navbar']//a[starts-with(@class,'navbar-link')]
 
-Parent
+Finding Parent
 `Syntax: xpath-to-some-element//parent::<tag>`
 
-Preceding Sibling
+Finding Preceding Sibling
 `Syntax: xpath-to-some-element//preceding-sibling::<tag>`
 
-Following Sibling
+Finding Following Sibling
 `Syntax: xpath-to-some-element//following-sibling::<tag>`
 
 Find the price of the course “Python Programming Language”
